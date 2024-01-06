@@ -91,6 +91,11 @@ body {
 
 .toastui-calendar-timegrid {
   height: 100%;
+  min-height: 1500px;
+}
+
+.toastui-calendar-event-time {
+  min-height: 14px;
 }
 
 /*** BEGIN popup-related styling ***/

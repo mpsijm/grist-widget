@@ -147,10 +147,15 @@ class CalendarHandler {
     return {
       week: {
         taskView: false,
+        startDayOfWeek: 1,
         dayNames: [t('Sun'), t('Mon'), t('Tue'), t('Wed'), t('Thu'), t('Fri'), t('Sat')],
+        narrowWeekend: true,
+        timeStep: [0, 15, 30, 45],
       },
       month: {
+        startDayOfWeek: 1,
         dayNames: [t('Sun'), t('Mon'), t('Tue'), t('Wed'), t('Thu'), t('Fri'), t('Sat')],
+        narrowWeekend: true,
       },
       usageStatistics: false,
       theme: this._calendarTheme(),
@@ -166,6 +171,9 @@ class CalendarHandler {
           const {title} = event;
           const sanitizedTitle = title.replace('"','&quot;').trim();
           return `<span title="${sanitizedTitle}">${title}</span>`;
+        },
+        timegridDisplayPrimaryTime(time) {
+          return time.time.getHours().toString().padStart(2, "0");
         },
         popupDelete(){
           return t('Delete')
