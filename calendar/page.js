@@ -146,10 +146,11 @@ class CalendarHandler {
   _getCalendarOptions() {
     return {
       week: {
-        taskView: false,
         startDayOfWeek: 1,
         dayNames: [t('Sun'), t('Mon'), t('Tue'), t('Wed'), t('Thu'), t('Fri'), t('Sat')],
         narrowWeekend: true,
+        eventView: ['time'],
+        taskView: false,
         timeStep: [0, 15, 30, 45],
       },
       month: {
